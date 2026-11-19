@@ -1,0 +1,24 @@
+/*-- scss:defaults --*/
+// Light SIB touch on top of the revealjs default theme
+// (colours taken from sib-swiss/reproducible-analysis-training)
+$link-color: #009ee3;
+$code-color: #ae191a;
+$presentation-heading-color: #222;
+// revealjs default is 40px on a 1050x700 canvas; 32px keeps ~13 lines per slide
+$presentation-font-size-root: 32px;
+$presentation-h2-font-size: 1.5em;
+// system font for diagrams: avoids mermaid sizing boxes before the web font loads
+$mermaid-font-family: Helvetica, Arial, sans-serif;
+
+/*-- scss:rules --*/
+.reveal .slide-logo {
+  max-height: 2.2rem !important;
+}
+
+.reveal table {
+  font-size: 0.75em;
+}
+
+.reveal .footer {
+  font-size: 0.45em;
+}

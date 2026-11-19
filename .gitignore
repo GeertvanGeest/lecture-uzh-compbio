@@ -1,0 +1,15 @@
+# Quarto render output
+slides.html
+slides_files/
+.quarto/
+_site/
+_freeze/
+
+# Overflow-check temp file
+_overflow_check.html
+
+# OS / editor
+.DS_Store
+.Rproj.user/
+.Rhistory
+__pycache__/
