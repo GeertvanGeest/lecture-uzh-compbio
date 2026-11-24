@@ -7,12 +7,13 @@ Questions are grouped by the `Question` slide where they are asked. ✅ marks th
 ## Block 1: start of lecture (slide "Questions!")
 
 ### Q1 — Background: study programme
-**Which programme are you in?** (single choice)
+**What kind of programme are you in?** (single choice)
 
 - BSc Biology / Life Sciences
-- MSc (e.g. Biochemistry, Biomedicine, Molecular Life Sciences)
+- MSc Biology / Life sciences (e.g. Biochemistry, Biomedicine, Molecular Life Sciences)
+- BSc Computer Science / Data Science
+- MSc Computer Science/ Data Science
 - PhD programme
-- Computer Science / Data Science
 - Other
 
 ### Q2 — Background: programming experience

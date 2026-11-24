@@ -52,7 +52,7 @@ After this lecture you can:
 -   **Argue** why FAIR, well-annotated data is a prerequisite for useful AI models
 -   **Describe** the main building blocks of a reproducible analysis (code, environment, workflow, data)
 -   **Explain** what an LLM, an agent and an MCP server are, and how they connect to databases
--   **Critically assess** opportunities and risks of using AI to write code and interpret results
+-   **Assess** opportunities and risks of using AI to write code and interpret results
 -   **Reflect** on the skills you need as a (future) bioinformatician
 :::
 
@@ -62,14 +62,14 @@ After this lecture you can:
 ::: {.column width="50%"}
 -   Scan the QR code
 
--   OR: go to **vevox.app** and use the code: `XXX-XXX-XXX`
+-   OR: go to **vevox.app** and use the code: `183-757-288`
 :::
 
 ::: {.column width="10%"}
 :::
 
 ::: {.column width="40%"}
-![](img/qr_vevox.svg)
+![](img/qr_vevox.svg){width="100%"}
 :::
 :::
 
@@ -82,7 +82,7 @@ Vevox Q1–Q5: study programme, programming experience, FAIR awareness, database
 ## Bioinformatics thrives on shared data
 
 ::: columns
-::: {.column width="60%"}
+::: {.column width="70%"}
 ::: incremental
 -   Almost every analysis starts with **someone else's data**:
     -   reference genomes and annotations
@@ -90,10 +90,11 @@ Vevox Q1–Q5: study programme, programming experience, FAIR awareness, database
     -   structures, expression, interactions, pathways
 -   Your own experiment only becomes meaningful **in context** of what is already known
 -   Shared data are the product of **decades of curation** by experts
+-   Major scientific effort goes into building and maintaining **databases and software** 
 :::
 :::
 
-::: {.column width="40%"}
+::: {.column width="30%"}
 ![](img/giant_shoulder.png)
 :::
 :::
@@ -106,7 +107,7 @@ Vevox Q1–Q5: study programme, programming experience, FAIR awareness, database
 -   **1986**: Amos Bairoch starts **Swiss-Prot** in Geneva: a manually curated protein knowledgebase
 -   **1993**: **Expasy** goes online, one of the first web servers in the life sciences
 -   **1998**: **SIB** is founded
--   **2002**: Swiss-Prot + EMBL-EBI + PIR → **UniProt**
+-   **2002**: Swiss-Prot + TrEMBL + PIR → **UniProt**
 -   Today: still expert-curated, with evidence for every annotation
 :::
 :::
@@ -134,7 +135,6 @@ Amos Bairoch started Swiss-Prot as a PhD student. A good example of how a single
     -   **coordination** of Swiss bioinformatics
     -   **open databases & software**
     -   **centre of excellence**: expertise & services
--   **Infrastructure** (e.g. SPHN) and **training**
 :::
 
 ::: {.column width="40%"}
@@ -197,7 +197,7 @@ Data are most valuable when **others** can find and use them — quickly, and wi
 ::: incremental
 -   Can anyone **find** it? (Is it indexed? Does it have an identifier?)
 -   Can they **get** it? (Under which conditions? Will the link still work in 10 years?)
--   Can a computer **understand** it? (Formats, vocabularies, gene names?)
+-   Can someone else or a computer **understand** it? (Formats, vocabularies, gene names?)
 -   Are they **allowed and able** to reuse it? (License, provenance, methods?)
 :::
 
@@ -404,7 +404,6 @@ Screenshot: p53 in AlphaFold DB, linked to UniProt P04637 and 321 experimental P
 
 ::: incremental
 -   **Annotation errors propagate**: automatic annotation based on wrongly annotated entries
--   **Bias**: most data come from few organisms, populations and cell types
 -   **Data leakage**: homologous proteins in training *and* test set → overly optimistic performance
 -   **Missing metadata**: batch, protocol, tissue unknown → models learn the wrong signal
 :::
@@ -413,20 +412,10 @@ Screenshot: p53 in AlphaFold DB, linked to UniProt P04637 and 321 experimental P
 
 -   Curated resources with **evidence codes** (e.g. Swiss-Prot) are especially valuable for AI
 
-## FAIR applies to models too
-
--   ELIXIR **DOME** recommendations for reporting machine learning in biology:
-    -   **D**ata · **O**ptimisation · **M**odel · **E**valuation
--   Share **models**, **training data** and **code** with identifiers and licenses
--   Model cards, benchmark datasets, versioned releases
-
-::: aside
-Walsh et al. (2021) DOME: recommendations for supervised machine learning validation in biology. *Nat Methods* 18:1122–1127. [dome-ml.org](https://dome-ml.org)
-:::
 
 ## Question
 
-![](img/qr_vevox.svg){fig-align="center"}
+![](img/qr_vevox.svg){fig-align="center" height="480"}
 
 ::: notes
 Vevox Q6–Q9: Swiss resource, FAIR ≠ open, what makes data AI-ready, and a guess for the next slide (share of AI-ready microbiome studies). Reveal the answer on the next slide.
@@ -454,20 +443,6 @@ Degregori et al. (2026) *iMeta* e70192, [doi.org/10.1002/imt2.70192](https://doi
 
 ::: notes
 "AI-ready" in the paper: FAIR plus structured, machine-actionable, harmonised per-sample metadata that can be ingested without manual curation or author contact. Deposit improved slightly over time; per-sample annotation did not. Authors' recommendations: reviewers/editors check the accession for per-sample metadata (they note this takes a single LLM prompt against the ENA API, see the agents/MCP part later), richer required fields at SRA/ENA/DDBJ, citable data submissions.
-:::
-
-## Four tiers of reusability
-
-![](img/papers/degregori2026_fig1_tiers.png){fig-align="center" height="430"}
-
-Only Tier 1 is **machine-readable in the repository**
-
-::: aside
-Degregori et al. (2026) *iMeta* e70192, Fig. 1 (CC BY 4.0)
-:::
-
-::: notes
-Ask: which tier would your last project end up in? Figure 2 of the paper (img/papers/degregori2026_fig2.png) has the trends over time if you want to show the "no improvement" result.
 :::
 
 # Reproducible analyses
@@ -621,9 +596,9 @@ flowchart TD
 Screenshots, 19 Nov 2026
 :::
 
-## FAIR applies to software
+## FAIR also applies to software and analysis
 
--   Research software is a research output, just like data
+-   Research software and analysis scripts are research output, just like data
 -   **FAIR4RS** principles: identifiers for software versions, rich metadata, standard formats, license
 -   In practice:
     -   Code on GitHub/GitLab with a **license**
@@ -636,7 +611,7 @@ Barker et al. (2022) Introducing the FAIR Principles for research software. *Sci
 
 ## Question
 
-![](img/qr_vevox.svg){fig-align="center"}
+![](img/qr_vevox.svg){fig-align="center" height="480"}
 
 ::: notes
 Vevox Q10–Q11: rerun analysis → different results; which tool is a workflow manager.
@@ -648,7 +623,7 @@ Vevox Q10–Q11: rerun analysis → different results; which tool is a workflow 
 
 ## Question
 
-![](img/qr_vevox.svg){fig-align="center"}
+![](img/qr_vevox.svg){fig-align="center" height="480"}
 
 ::: notes
 Vevox Q12–Q13: how do you use AI tools for coding; do you check AI-generated code.
@@ -831,24 +806,6 @@ mcp.run(transport="streamable-http")
 Simplified from [sib-swiss/llm-biodata-training](https://github.com/sib-swiss/llm-biodata-training) (MIT license)
 :::
 
-## Putting it together: LLM + agent + MCP
-
-```{mermaid}
-sequenceDiagram
-  participant U as You
-  participant A as Agent (LLM + harness)
-  participant S as MCP server (STRING)
-  participant D as STRING database
-  U->>A: "Top interaction partners of human TP53?"
-  A->>S: list tools
-  S-->>A: get_interactions(id, species), ...
-  A->>S: get_interactions("TP53", 9606)
-  S->>D: API query
-  D-->>S: partners + confidence scores
-  S-->>A: structured result
-  A-->>U: Answer, based on live, curated data
-```
-
 ::: notes
 Optional live demo (~5 min): connect https://mcp.string-db.org/ or https://chat.expasy.org/mcp/ to a chat app (Le Chat, ChatGPT, Claude) and ask the TP53 question. Show which tool was called and with which arguments.
 :::
@@ -880,7 +837,7 @@ Callback to the microbiome audit (Degregori et al. 2026): the authors propose th
 
 ## Question
 
-![](img/qr_vevox.svg){fig-align="center"}
+![](img/qr_vevox.svg){fig-align="center" height="480"}
 
 ::: notes
 Vevox Q14–Q15: what is an agent; what does an MCP server do.
@@ -993,7 +950,7 @@ Becker et al. (2025) METR, arXiv:2507.09089
 **Don't**
 
 -   Skip reading the code and running the tests
--   Let it take **irreversible actions** unsupervised (deleting data, pushing to production)
+-   Let it take **irreversible actions** unsupervised (deleting data, modifying scripts)
 -   Grant broad permissions you don't understand
 -   Treat it as a **knowledge oracle**: cross-check biological claims in UniProt, Ensembl, PubMed
 :::
@@ -1117,7 +1074,7 @@ Garcia et al. (2020) *PLoS Comput Biol* 16(5):e1007854 · Screenshot 19 Nov 2026
 
 ## Question
 
-![](img/qr_vevox.svg){fig-align="center"}
+![](img/qr_vevox.svg){fig-align="center" height="480"}
 
 ::: notes
 Vevox Q17–Q18: open word cloud on skills, and the end-of-lecture check (repeat of Q3/Q7 style).

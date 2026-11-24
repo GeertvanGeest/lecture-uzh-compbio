@@ -11,6 +11,7 @@ Style and parts of the content are based on
 - `slides.qmd`: revealjs slide deck (with speaker notes, press `s` in the browser)
 - `custom.scss`: small SIB-style tweaks on top of the revealjs default theme
 - `vevox_questions.md`: audience questions, grouped by the `Question` slide where they are asked
+- `polls/polls.json`: the same questions as a Vevox import file, generated with `python3 vevox_to_json.py` (rerun after editing `vevox_questions.md`)
 - `img/qr_vevox.svg`: **placeholder**. Replace with the QR code of your Vevox session, and set the session code on the "Questions!" slide
 
 ## Image sources
